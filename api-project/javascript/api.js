@@ -1,4 +1,6 @@
 const brawl = "https://api.brawlapi.com/v1/brawlers";
+const URL = "http://api.quotable.io/random";
+
 async function getData(Url) {
   try {
     const response = await fetch(Url);
@@ -6,7 +8,7 @@ async function getData(Url) {
       throw Error(response.status);
     } else {
       const data = await response.json();
-      document.getElementById("api-response").textContent = data.name;
+      document.getElementById("app").textContent = data.name;
     }
   } catch (Error) {
     console.log(error);
