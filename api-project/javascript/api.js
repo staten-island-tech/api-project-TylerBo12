@@ -1,3 +1,5 @@
+import { DOMselectors } from "./DOMselectors";
+
 const brawl = "https://api.brawlapi.com/v1/brawlers";
 const URL = "http://api.quotable.io/random";
 
@@ -8,7 +10,7 @@ async function getData(brawl) {
       throw Error(response.status);
     } else {
       const data = await response.json();
-      document.getElementById("api-response").textContent = data.name;
+      document.getElementById("api-response").textContent = data.list;
       console.log(data);
     }
   } catch (Error) {
@@ -19,4 +21,17 @@ async function getData(brawl) {
   }
 }
 
-getData(brawl);
+const filter = {
+  display: async function displayCards(brawl) {
+    const response = await fetch(brawl);
+    const data = await response.json();
+    data.list.forEach((character) => {
+      DOMselectors.parent.insertAdjacentHTML(
+        "beforeend",
+        `<div id="parent"><p class="child">${character.name}</p></div>`
+      );
+    });
+  },
+};
+
+filter.display(brawl);

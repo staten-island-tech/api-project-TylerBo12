@@ -14,7 +14,29 @@ body{
 }
 
 #api-response{
-  font-size: 30rem;
+  font-size: 5rem;
+}
+
+#parent{
+  display: flex;
+  font-size: 10rem;
+  flex-wrap: wrap;
+}
+
+.child{
+  display: flex;
+  font-size: 8rem;
+  width: 40rem;
+  margin: 1.3rem;
+  border: solid black 0.8rem;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  color: black;
+  background-color: palevioletred;
+  border-radius: 2rem;
+  flex-wrap: wrap;
+  
 }
 
 
