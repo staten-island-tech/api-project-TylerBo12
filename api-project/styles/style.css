@@ -26,6 +26,7 @@ body{
 .child{
   display: flex;
   font-size: 6rem;
+  height: 70rem;
   width: 40rem;
   margin: 1.2rem;
   border: solid black 0.8rem;
@@ -55,5 +56,10 @@ body{
 
 .desc{
   font-size: 3rem;
+}
+
+button{
+ width: 25rem;
+ height: 8rem;
 }
 

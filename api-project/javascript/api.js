@@ -22,13 +22,13 @@ async function getData(brawl) {
 }
 
 const filter = {
-  display: async function displayCards(brawl) {
+  display: async function (brawl) {
     const response = await fetch(brawl);
     const data = await response.json();
     data.list.forEach((character) => {
       DOMselectors.parent.insertAdjacentHTML(
         "beforeend",
-        `<div id="parent"> <sub class="child">${character.name} <img class="img" src="${character.imageUrl}"><img/> <p class="desc">${character.description}</p> </sub> </div>`
+        `<div id="parent"><sub class="child" onclick = alert("No")> <p>${character.name}</p> <img class="img" src="${character.imageUrl}"><img/> <p class="desc">${character.description}</p></sub> </div>`
       );
     });
   },
