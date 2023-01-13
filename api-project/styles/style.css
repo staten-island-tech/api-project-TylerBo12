@@ -1,5 +1,3 @@
-
-
 *,html,body{
   box-sizing: border-box;
   font-size: 62.5%;
@@ -58,8 +56,27 @@ body{
   font-size: 3rem;
 }
 
-button{
+.stats{
  width: 25rem;
  height: 8rem;
+ margin-top: 2rem;
+ justify-content: center;
+ align-items: center;
+ border-radius: 0.5rem;
+ background-color: limegreen;
+ border: solid black 0.5rem;
 }
+
+.name{
+  margin-bottom: 1rem;
+  margin-top: 1rem ;
+}
+
+.search, .clear{
+  width: 50rem;
+  height: 20rem;
+  flex-direction: row;
+}
+
+
 

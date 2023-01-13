@@ -14,7 +14,7 @@ async function getData(brawl) {
       console.log(data);
     }
   } catch (Error) {
-    console.log(error);
+    console.log(Error);
     console.log("sadge :(");
     document.getElementById("api-response").textContent =
       "Sorry we couldn't find the specified brawler";
@@ -28,7 +28,7 @@ const filter = {
     data.list.forEach((character) => {
       DOMselectors.parent.insertAdjacentHTML(
         "beforeend",
-        `<div id="parent"><sub class="child" onclick = alert("No")> <p>${character.name}</p> <img class="img" src="${character.imageUrl}"><img/> <p class="desc">${character.description}</p></sub> </div>`
+        `<div id="parent"><sub class="child" > <p class="name">${character.name}</p> <img class="img" src="${character.imageUrl}"><img/> <p class="desc">${character.description}</p> <a href="${character.link}"><button class="stats ">Statistics</button></a></sub> </div>`
       );
     });
   },
