@@ -67,16 +67,15 @@ body{
  border: solid black 0.5rem;
 }
 
+.filters{
+  width: 30rem;
+  height: 12rem;
+  font-size: 5rem;
+}
+
 .name{
   margin-bottom: 1rem;
   margin-top: 1rem ;
 }
-
-.search, .clear{
-  width: 50rem;
-  height: 20rem;
-  flex-direction: row;
-}
-
 
 

@@ -28,7 +28,7 @@ const filter = {
     data.list.forEach((character) => {
       DOMselectors.parent.insertAdjacentHTML(
         "beforeend",
-        `<div id="parent"><sub class="child" > <p class="name">${character.name}</p> <img class="img" src="${character.imageUrl}"><img/> <p class="desc">${character.description}</p> <a href="${character.link}"><button class="stats ">Statistics</button></a></sub> </div>`
+        `<div id="parent"><sub class="child" > <h2 class="name">${character.name}</h2> <img class="img" src="${character.imageUrl}"><img/> <h3 class="desc">${character.description}</h3> <a href="${character.link}"><button class="stats ">Statistics</button></a></sub> </div>`
       );
     });
   },
