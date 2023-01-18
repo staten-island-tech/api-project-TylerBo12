@@ -1,8 +1,6 @@
 const DOMselectors = {
   parent: document.querySelector("#parent"),
-  clear: document.querySelector(".clear"),
-  input: document.querySelector(".clear"),
-  input: document.querySelector(".clear"),
+  chromaticBtn: document.querySelector(".chromaticBtn"),
 };
 
 export { DOMselectors };
