@@ -21,7 +21,9 @@ async function getData(brawl) {
   }
 }
 
-const filter = {
+const filters = {};
+
+const functions = {
   display: async function (brawl) {
     const response = await fetch(brawl);
     const data = await response.json();
@@ -32,6 +34,27 @@ const filter = {
       );
     });
   },
+
+  removeCards: function () {
+    const cards = document.querySelectorAll(".child");
+    const cardsArray = Array.from(cards);
+    cardsArray.forEach((cards) => {
+      cards.remove();
+    });
+  },
+
+  filterChromatics: async function () {
+    const response = await fetch(brawl);
+    const data = await response.json();
+    data.list.rarity.filter((character) => {
+      character.name.includes("Chromatic").forEach((character) => {
+        DOMselectors.parent.insertAdjacentHTML(
+          "beforeend",
+          `<div id="parent"><sub class="child" > <h2 class="name">${character.name}</h2> <img class="img" src="${character.imageUrl}"><img/> <h3 class="desc">${character.description}</h3> <a href="${character.link}"><button class="stats ">Statistics</button></a></sub> </div>`
+        );
+      });
+    });
+  },
 };
 
-filter.display(brawl);
+functions.display(brawl);
