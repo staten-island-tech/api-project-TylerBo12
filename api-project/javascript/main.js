@@ -29,14 +29,16 @@ const filters = {
   filterChromatics: async function () {
     const response = await fetch(brawl);
     const data = await response.json();
-    data.list.filter((character) =>
-      character.name.includes("Chromatic").forEach((character) => {
+    data.list.filter((character) => {
+      const arr = Array.from(character.rarity.name);
+      console.log(character);
+      arr.includes("Chromatic").forEach((character) => {
         DOMselectors.parent.insertAdjacentHTML(
           "beforeend",
           `<div id="parent"><sub class="child" > <h2 class="name">${character.name}</h2> <img class="img" src="${character.imageUrl}"><img/> <h3 class="desc">${character.description}</h3> <a href="${character.link}"><button class="stats ">Statistics</button></a></sub> </div>`
         );
-      })
-    );
+      });
+    });
   },
   filterLegendaries: async function () {
     const response = await fetch(brawl);
@@ -59,7 +61,7 @@ const functions = {
     data.list.forEach((character) => {
       DOMselectors.parent.insertAdjacentHTML(
         "beforeend",
-        `<div id="parent"><sub class="child" > <h2 class="name">${character.name}</h2> <img class="img" src="${character.imageUrl}"><img/> <h3 class="desc">${character.description}</h3> <a href="${character.link}"><button class="stats ">Statistics</button></a></sub> </div>`
+        `<div id="parent"><sub class="child" > <h2 class="name">${character.name}</h2> <img class="img" src="${character.imageUrl}"><img/> <h3 class="desc">${character.description}</h3> <a href="${character.link}" target = "_blank" rel="noopener noreferrer"><button class="stats" confirm("This will open a new tab are you sure you want to proceed?")>Statistics</button></a></sub> </div>`
       );
     });
   },
@@ -67,7 +69,7 @@ const functions = {
     "click",
     async function () {
       filters.removeCards();
-      await filters.filterChromatics();
+      filters.filterChromatics();
     }
   ),
   legendaries: DOMselectors.legendaryBtn.addEventListener("click", function () {
