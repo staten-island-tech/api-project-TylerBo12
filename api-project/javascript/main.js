@@ -17,7 +17,7 @@ victoria.then((value) => {
   console.log(value);
 });
 
-const filters = {
+/* const filters = {
   removeCards: function () {
     const cards = document.querySelectorAll(".child");
     const cardsArray = Array.from(cards);
@@ -32,7 +32,7 @@ const filters = {
     data.list.filter((character) => {
       const arr = Array.from(character.rarity.name);
       console.log(character);
-      arr.includes("Chromatic").forEach((character) => {
+      arr.includes(`Chromatic`).forEach((character) => {
         DOMselectors.parent.insertAdjacentHTML(
           "beforeend",
           `<div id="parent"><sub class="child" > <h2 class="name">${character.name}</h2> <img class="img" src="${character.imageUrl}"><img/> <h3 class="desc">${character.description}</h3> <a href="${character.link}"><button class="stats ">Statistics</button></a></sub> </div>`
@@ -44,7 +44,7 @@ const filters = {
     const response = await fetch(brawl);
     const data = await response.json();
     data.list.filter((character) => {
-      character.rarity.name.includes("Legendary").forEach((character) => {
+      character.rarity.name.includes(`Legendary`).forEach((character) => {
         DOMselectors.parent.insertAdjacentHTML(
           "beforeend",
           `<div id="parent"><sub class="child" > <h2 class="name">${character.name}</h2> <img class="img" src="${character.imageUrl}"><img/> <h3 class="desc">${character.description}</h3> <a href="${character.link}"><button class="stats ">Statistics</button></a></sub> </div>`
@@ -52,7 +52,7 @@ const filters = {
       });
     });
   },
-};
+}; */
 
 const functions = {
   display: async function (brawl) {
