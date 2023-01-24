@@ -17,7 +17,7 @@ victoria.then((value) => {
   console.log(value);
 });
 
-/* const filters = {
+const filters = {
   removeCards: function () {
     const cards = document.querySelectorAll(".child");
     const cardsArray = Array.from(cards);
@@ -26,33 +26,19 @@ victoria.then((value) => {
     });
   },
 
-  filterChromatics: async function () {
+  filterRarities: async function (cardName) {
     const response = await fetch(brawl);
     const data = await response.json();
-    data.list.filter((character) => {
-      const arr = Array.from(character.rarity.name);
-      console.log(character);
-      arr.includes(`Chromatic`).forEach((character) => {
+    data.list
+      .filter((character) => character.rarity.name.includes(cardName))
+      .forEach((character) => {
         DOMselectors.parent.insertAdjacentHTML(
           "beforeend",
-          `<div id="parent"><sub class="child" > <h2 class="name">${character.name}</h2> <img class="img" src="${character.imageUrl}"><img/> <h3 class="desc">${character.description}</h3> <a href="${character.link}"><button class="stats ">Statistics</button></a></sub> </div>`
+          `<div id="parent"><sub class="child" > <h2 class="name">${character.name}</h2> <img class="img" src="${character.imageUrl}"><img/> <h3 class="desc">${character.description}</h3> <a href="${character.link}"><button class="stats " confirm("Do you want to leave this page?")>Statistics</button></a></sub> </div>`
         );
       });
-    });
   },
-  filterLegendaries: async function () {
-    const response = await fetch(brawl);
-    const data = await response.json();
-    data.list.filter((character) => {
-      character.rarity.name.includes(`Legendary`).forEach((character) => {
-        DOMselectors.parent.insertAdjacentHTML(
-          "beforeend",
-          `<div id="parent"><sub class="child" > <h2 class="name">${character.name}</h2> <img class="img" src="${character.imageUrl}"><img/> <h3 class="desc">${character.description}</h3> <a href="${character.link}"><button class="stats ">Statistics</button></a></sub> </div>`
-        );
-      });
-    });
-  },
-}; */
+};
 
 const functions = {
   display: async function (brawl) {
@@ -61,21 +47,23 @@ const functions = {
     data.list.forEach((character) => {
       DOMselectors.parent.insertAdjacentHTML(
         "beforeend",
-        `<div id="parent"><sub class="child" > <h2 class="name">${character.name}</h2> <img class="img" src="${character.imageUrl}"><img/> <h3 class="desc">${character.description}</h3> <a href="${character.link}" target = "_blank" rel="noopener noreferrer"><button class="stats" confirm("This will open a new tab are you sure you want to proceed?")>Statistics</button></a></sub> </div>`
+        `<div id="parent"><sub class="child" > <h2 class="name">${character.name}</h2> <img class="img" src="${character.imageUrl}"><img/> <h3 class="desc">${character.description}</h3> <a href="${character.link}" target = "_blank" rel="noopener noreferrer"><button class="stats" onClick = "confirmFunction()">Statistics</button></a></sub> </div>`
       );
     });
   },
-  chromatics: DOMselectors.chromaticBtn.addEventListener(
-    "click",
-    async function () {
-      filters.removeCards();
-      filters.filterChromatics();
-    }
-  ),
+
+  chromatics: DOMselectors.chromaticBtn.addEventListener("click", function () {
+    filters.removeCards();
+    filters.filterRarities("Chromatic");
+  }),
   legendaries: DOMselectors.legendaryBtn.addEventListener("click", function () {
     filters.removeCards();
-    filters.filterLegendaries();
+    filters.filterRarities("Legendary");
   }),
 };
 
 functions.display(brawl);
+
+const confirmFunction = function () {
+  console.log("apsfha0fosdfsdf");
+};
