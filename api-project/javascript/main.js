@@ -52,6 +52,10 @@ const functions = {
     });
   },
 
+  all: DOMselectors.allBtn.addEventListener("click", function () {
+    filters.removeCards();
+    functions.display(brawl);
+  }),
   chromatics: DOMselectors.chromaticBtn.addEventListener("click", function () {
     filters.removeCards();
     filters.filterRarities("Chromatic");
@@ -60,10 +64,22 @@ const functions = {
     filters.removeCards();
     filters.filterRarities("Legendary");
   }),
+  mythics: DOMselectors.mythicBtn.addEventListener("click", function () {
+    filters.removeCards();
+    filters.filterRarities("Mythic");
+  }),
+  epics: DOMselectors.epicBtn.addEventListener("click", function () {
+    filters.removeCards();
+    filters.filterRarities("Epic");
+  }),
+  superRares: DOMselectors.superRareBtn.addEventListener("click", function () {
+    filters.removeCards();
+    filters.filterRarities("Super Rare");
+  }),
+  rares: DOMselectors.rareBtn.addEventListener("click", function () {
+    filters.removeCards();
+    filters.filterRarities("Rare");
+  }),
 };
 
 functions.display(brawl);
-
-const confirmFunction = function () {
-  console.log("apsfha0fosdfsdf");
-};
