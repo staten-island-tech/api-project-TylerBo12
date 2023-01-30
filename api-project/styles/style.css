@@ -100,4 +100,14 @@ body{
   height: 10rem;
 }
 
+#Title{
+  font-size: 15rem;
+  text-align: center;
+  background-color: aliceblue;
+  border-radius: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  }
+
+
 
