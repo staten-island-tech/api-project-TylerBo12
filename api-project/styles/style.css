@@ -110,5 +110,62 @@ body{
   margin-top: 2rem;
   }
 
+  @media screen and (min-width: 32rem) and (max-width: 48rem){
+    #Title {
+      width: 20rem;
+      text-align: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      display: flex;
+    }
+  
+    #parent{
+      display: flex;
+      text-align: center;
+      justify-items: center;
+      justify-content: space-evenly;
+      
+    }
+    
+  }
+  
+  
+  @media screen and (min-width: 48.1rem) and (max-width: 76.8rem){
+    #Title {
+      width: 50rem;
+      text-align: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      display: flex;
+    }
+  
+    #parent{
+      display: flex;
+      text-align: center;
+      justify-items: center;
+      justify-content: space-evenly;
+      
+    }
+  }
+  
+  @media screen and (min-width: 76.9rem) and (max-width:238.8rem){
+    #Title {
+      width: 70rem;
+      text-align: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      display: flex;
+    }
+  
+    #parent{
+      display: flex;
+      text-align: center;
+      justify-items: center;
+      justify-content: space-evenly;
+      
+    }
+  
+  }
+
 
 

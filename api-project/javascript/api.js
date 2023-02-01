@@ -1,5 +1,4 @@
 const brawl = "https://api.brawlapi.com/v1/brawlers";
-const URL = "http://api.quotable.io/random";
 
 async function getData(brawl) {
   try {
